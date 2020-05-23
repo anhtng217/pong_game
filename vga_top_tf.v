@@ -1,16 +1,10 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: Test fixture for VGA controller									     //
-//    																			                 //
-//		Created by: Anh Nguyen on 11/07/19										           //
-//		Copyright @2019 Anh Nguyen. All rights reserved.						        //
-//																										  //
-//  	In submitting this file for class work at CSULB  	 							  //
-//  	I am confirming that this is my work and the work  							  //
-//		of no one else. In submitting this code I acknowledge 					     //
-//		that plagiarism in student project work is subject to 						  //
-//		dismissal from the class.																  //
-//																										  //
+// 	File name: VGA top module test fixture										//
+//    																			//
+//		Created by: Anh Nguyen on 11/07/19										//
+//		Copyright @2019 Anh Nguyen. All rights reserved.						//
+//																				//
 //////////////////////////////////////////////////////////////////////////////////
 
 module vga_top_tf;

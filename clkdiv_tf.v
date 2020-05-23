@@ -1,26 +1,12 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   23:14:38 10/24/2019
-// Design Name:   clkdiv
-// Module Name:   C:/Users/tranf/Desktop/School work/CSULB Fall 2019/CECS 361/Projects/Project 2 - VGA/Project2/clkdiv_tf.v
-// Project Name:  Project2
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: clkdiv
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+// 	File name: clock divider test fixture										//
+//    																			//
+//		Created by: Anh Nguyen on 10/24/19										//
+//		Copyright @2019 Anh Nguyen. All rights reserved.						//
+//																				//
+//////////////////////////////////////////////////////////////////////////////////
 
 module clkdiv_tf;
 

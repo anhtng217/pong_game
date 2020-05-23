@@ -1,23 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    12:56:08 12/05/2019 
-// Design Name: 
-// Module Name:    upDebounce 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
+// 	File name: up button debouncer												//
+//    																			//
+//		Created by: Anh Nguyen on 12/05/19										//
+//		Copyright @2019 Anh Nguyen. All rights reserved.						//
+//																				//
 //////////////////////////////////////////////////////////////////////////////////
+
 module upDebounce(clk,rst,pulse,button,yes);
 	input clk,rst,pulse,button;
 	output reg yes;

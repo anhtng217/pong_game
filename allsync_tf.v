@@ -1,26 +1,12 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   22:20:49 10/24/2019
-// Design Name:   allsync
-// Module Name:   C:/Users/tranf/Desktop/School work/CSULB Fall 2019/CECS 361/Projects/Project 2 - VGA/Project2/allsync_tf.v
-// Project Name:  Project2
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: allsync
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+// 	File name: vertical and horizontal sync test fixture						//
+//    																			//
+//		Created by: Anh Nguyen on 10/24/19										//
+//		Copyright @2019 Anh Nguyen. All rights reserved.						//
+//																				//
+//////////////////////////////////////////////////////////////////////////////////
 
 module allsync_tf;
 

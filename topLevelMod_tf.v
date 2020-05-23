@@ -1,26 +1,12 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   12:02:53 10/25/2019
-// Design Name:   topLevelMod
-// Module Name:   C:/Users/tranf/Desktop/School work/CSULB Fall 2019/CECS 361/Projects/Project 2 - VGA/Project2/topLevelMod_tf.v
-// Project Name:  Project2
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: topLevelMod
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+// 	File name: topLevelModule test fixture										//
+//    																			//
+//		Created by: Anh Nguyen on 10/17/19										//
+//		Copyright @2019 Anh Nguyen. All rights reserved.						//
+//																				//
+//////////////////////////////////////////////////////////////////////////////////
 
 module topLevelMod_tf;
 

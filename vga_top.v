@@ -1,18 +1,14 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: VGA controller															     //
-//    																			                 //
-//		Created by: Anh Nguyen on 10/17/19										           //
-//		Copyright @2019 Anh Nguyen. All rights reserved.						        //
-//																										  //
-//  	In submitting this file for class work at CSULB  	 							  //
-//  	I am confirming that this is my work and the work  							  //
-//		of no one else. In submitting this code I acknowledge 					     //
-//		that plagiarism in student project work is subject to 						  //
-//		dismissal from the class.																  //
-//																										  //
+// 	File name: VGA controller													//
+//    																			//
+//		Created by: Anh Nguyen on 10/17/19										//
+//		Copyright @2019 Anh Nguyen. All rights reserved.						//
+//																				//
 //////////////////////////////////////////////////////////////////////////////////
-module vga_top(clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,rightUpButton,rightDownButton);
+
+module vga_top (clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,
+				rightUpButton,rightDownButton);
 	input 					clk,rst,select,upButton,downButton,rightUpButton,rightDownButton;
 	input 	   [11:0] 	sw;
 	output reg  [11:0] 	rgb;
@@ -22,7 +18,8 @@ module vga_top(clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,rightUpButt
 	
 	reg 			[11:0] 	rgbr;
 	
-	allsync hv (.clk(clk), .rst(rst), .select(select), .hcount(x_pixel), .vcount(y_pixel), .h_sync(hsync), .v_sync(vsync), .video_on(on));
+	allsync hv (.clk(clk), .rst(rst), .select(select), .hcount(x_pixel), 
+				.vcount(y_pixel), .h_sync(hsync), .v_sync(vsync), .video_on(on));
 	
 	always@ (posedge clk, posedge rst)
 		if (rst) 
@@ -116,11 +113,15 @@ module vga_top(clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,rightUpButt
 	// Debounce the buttons on the board
 	// Left paddle
 	upDebounce up (.clk(clk),.rst(rst),.pulse(select),.button(upButton), .yes(upDetected));
-	downDebounce down (.clk(clk),.rst(rst),.pulse(select),.button(downButton), .yes(downDetected));
+	downDebounce down (.clk(clk),.rst(rst),.pulse(select),.button(downButton), 
+					   .yes(downDetected));
 	
 	// Right paddle
-	upDebounce rightUp (.clk(clk),.rst(rst),.pulse(select),.button(rightUpButton), .yes(rightUpDetected));
-	downDebounce rightDown (.clk(clk),.rst(rst),.pulse(select),.button(rightDownButton), .yes(rightDownDetected));
+	upDebounce rightUp (.clk(clk),.rst(rst),.pulse(select),.button(rightUpButton), 
+						.yes(rightUpDetected));
+
+	downDebounce rightDown (.clk(clk),.rst(rst),.pulse(select),.button(rightDownButton), 
+							.yes(rightDownDetected));
 
 	
 	// If reset is off, the left paddle get its next value
@@ -243,13 +244,19 @@ module vga_top(clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,rightUpButt
 				ballVVeloNext = ballSpeedUp;
 				
 			// Ball goes left when hitting right paddle
-			else if(((ballLeftBorder) >= rightPaddleLeftSide) && (ballLeftBorder <= rightPaddleRightSide)	&& ((ballUpperBorder)>= topOfRightPaddle) && ((ballUpperBorder <= topOfRightPaddle + paddleHeight)))
+			else if(((ballLeftBorder) >= rightPaddleLeftSide) && 
+					 (ballLeftBorder <= rightPaddleRightSide) && 
+					 ((ballUpperBorder) >= topOfRightPaddle)  && 
+					 ((ballUpperBorder <= topOfRightPaddle + paddleHeight)))
 				begin
 					ballHVeloNext = ballSpeedLeft;
 				end
 				
 			// Ball goes right when hitting left paddle
-			else if(((ballLeftBorder) <= paddleRightSide) && (ballLeftBorder >= paddleLeftSide)	&& ((ballUpperBorder)>= topOfPaddle) && ((ballUpperBorder <= topOfPaddle + paddleHeight)))
+			else if(((ballLeftBorder) <= paddleRightSide) && 
+					 (ballLeftBorder >= paddleLeftSide)	  && 
+					 ((ballUpperBorder) >= topOfPaddle)   && 
+					 ((ballUpperBorder <= topOfPaddle + paddleHeight)))
 				begin
 					ballHVeloNext = ballSpeedRight;
 				end
@@ -257,17 +264,25 @@ module vga_top(clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,rightUpButt
 
 	always@ (*)
 		//top
-		if ((x_pixel >= 2 && x_pixel <= rightWallRightBorder) && (y_pixel >= topWallUpperBorder && y_pixel <= topWallLowerBorder))  
+		if ((x_pixel >= 2 && x_pixel <= rightWallRightBorder) && 
+			(y_pixel >= topWallUpperBorder && y_pixel <= topWallLowerBorder))  
 			rgb = rgbr;
+		
 		//bottom
-		else if ((x_pixel >= 2 && x_pixel <= rightWallRightBorder) && (y_pixel >= bottomWallUpperBorder && y_pixel <= bottomWallLowerBorder)) 
+		else if ((x_pixel >= 2 && x_pixel <= rightWallRightBorder) && 
+				 (y_pixel >= bottomWallUpperBorder && y_pixel <= bottomWallLowerBorder)) 
 			rgb = rgbr;
+		
 		//left
-		else if ((x_pixel >= paddleLeftSide && x_pixel <= paddleRightSide) && (y_pixel >= topOfPaddle) && (y_pixel <= topOfPaddle + paddleHeight))
+		else if ((x_pixel >= paddleLeftSide && x_pixel <= paddleRightSide) && 
+				 (y_pixel >= topOfPaddle) && (y_pixel <= topOfPaddle + paddleHeight))
 			rgb = rgbr;
+		
 		//right
-		else if ((x_pixel >= rightPaddleLeftSide && x_pixel <= rightPaddleRightSide) && (y_pixel >= topOfRightPaddle) && (y_pixel <= topOfRightPaddle + paddleHeight))
+		else if ((x_pixel >= rightPaddleLeftSide && x_pixel <= rightPaddleRightSide) && 
+				 (y_pixel >= topOfRightPaddle) && (y_pixel <= topOfRightPaddle + paddleHeight))
 			rgb = rgbr;
+		
 		//ball
 		else if ((ballon) && (on))
 			rgb = rgbr;

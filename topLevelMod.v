@@ -1,18 +1,14 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: topLevelModule															     //
-//    																			                 //
-//		Created by: Anh Nguyen on 10/17/19										           //
-//		Copyright @2019 Anh Nguyen. All rights reserved.						        //
-//																										  //
-//  	In submitting this file for class work at CSULB  	 							  //
-//  	I am confirming that this is my work and the work  							  //
-//		of no one else. In submitting this code I acknowledge 					     //
-//		that plagiarism in student project work is subject to 						  //
-//		dismissal from the class.																  //
-//																										  //
+// 	File name: topLevelModule													//
+//    																			//
+//		Created by: Anh Nguyen on 10/17/19										//
+//		Copyright @2019 Anh Nguyen. All rights reserved.						//
+//																				//
 //////////////////////////////////////////////////////////////////////////////////
-module topLevelMod(clk,rst,sw,hscan,vscan,vgaR, vgaG, vgaB,upButton, downButton, rightUpButton,rightDownButton);
+
+module topLevelMod(clk,rst,sw,hscan,vscan,vgaR, vgaG, vgaB,upButton, downButton, 
+				   rightUpButton,rightDownButton);
 	input 			clk,rst,upButton, downButton, rightUpButton, rightDownButton;
 	input [11:0] 	sw;
 	wire 				allclk,allrst;
@@ -27,7 +23,9 @@ module topLevelMod(clk,rst,sw,hscan,vscan,vgaR, vgaG, vgaB,upButton, downButton,
 	clkdiv divider 	(.clk(clk), .rst(allrst), .clk_25MGHz(allclk));
 
 	//vga_top
-	vga_top vga 		(.clk(clk), .rst(allrst), .select(allclk), .sw(sw[11:0]), .hsync(hscan),
-							 .vsync(vscan), .rgb({vgaR[3:0],vgaG[3:0],vgaB[3:0]}), .upButton(upButton), .downButton(downButton),.rightUpButton(rightUpButton), .rightDownButton(rightDownButton));
+	vga_top vga 		(.clk(clk), .rst(allrst), .select(allclk), .sw(sw[11:0]), 
+						 .hsync(hscan),.vsync(vscan), .rgb({vgaR[3:0],vgaG[3:0],vgaB[3:0]}),
+						 .upButton(upButton), .downButton(downButton),
+						 .rightUpButton(rightUpButton), .rightDownButton(rightDownButton));
 	
 endmodule

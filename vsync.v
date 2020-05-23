@@ -1,16 +1,10 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: Veritical scan								 							     //
-//    																			                 //
-//		Created by: Anh Nguyen on 10/15/19										           //
-//		Copyright @2019 Anh Nguyen. All rights reserved.						        //
-//																										  //
-//  	In submitting this file for class work at CSULB  	 							  //
-//  	I am confirming that this is my work and the work  							  //
-//		of no one else. In submitting this code I acknowledge 					     //
-//		that plagiarism in student project work is subject to 						  //
-//		dismissal from the class.																  //
-//																										  //
+// 	File name: vertical scan (vsync.v)											//
+//    																			//
+//		Created by: Anh Nguyen on 10/15/19										//
+//		Copyright @2019 Anh Nguyen. All rights reserved.						//
+//																				//
 //////////////////////////////////////////////////////////////////////////////////
 
 module vsync(clk,rst,vselect,v_sync,h_count,v_vid);
