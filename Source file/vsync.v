@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: vertical scan (vsync.v)											//
+// 	File name: vertical scan													//
 //    																			//
-//		Created by: Anh Nguyen on 10/15/19										//
+//		Created by: Anh Nguyen on 10/17/19										//
 //		Copyright @2019 Anh Nguyen. All rights reserved.						//
 //																				//
 //////////////////////////////////////////////////////////////////////////////////

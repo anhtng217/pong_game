@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: Asynchronous In, Synchronous Out Reset							//
+// 	File name: AISO.v															//
 //    																			//
 //		Created by: Anh Nguyen on 10/17/19										//
 //		Copyright @2019 Anh Nguyen. All rights reserved.						//

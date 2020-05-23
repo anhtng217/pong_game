@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: Horizontal Scan and Vertical Scan								//
-//                                                                              //
+// 	File name: Horizontal scan and combination with vertical scan				//
+//    																			//
 //		Created by: Anh Nguyen on 10/17/19										//
 //		Copyright @2019 Anh Nguyen. All rights reserved.						//
 //																				//

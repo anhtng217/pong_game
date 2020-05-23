@@ -6,9 +6,8 @@
 //		Copyright @2019 Anh Nguyen. All rights reserved.						//
 //																				//
 //////////////////////////////////////////////////////////////////////////////////
-
-module vga_top (clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,
-				rightUpButton,rightDownButton);
+module vga_top(clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,
+			   rightUpButton,rightDownButton);
 	input 					clk,rst,select,upButton,downButton,rightUpButton,rightDownButton;
 	input 	   [11:0] 	sw;
 	output reg  [11:0] 	rgb;
@@ -105,7 +104,8 @@ module vga_top (clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,
 	assign ballLeftBorder = ballRightReg - ballWidth;
 	
 	// The pixels match the ball pixels
-	assign ballon = (x_pixel >= ballLeftBorder && x_pixel <= ballRightBorder) && (y_pixel <= ballLowerBorder && y_pixel >= ballUpperBorder);
+	assign ballon = (x_pixel >= ballLeftBorder && x_pixel <= ballRightBorder) && 
+					(y_pixel <= ballLowerBorder && y_pixel >= ballUpperBorder);
 		
 	// Rescan scanning start position
 	assign rescan = (y_pixel == 481) && (x_pixel == 0);
@@ -119,7 +119,6 @@ module vga_top (clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,
 	// Right paddle
 	upDebounce rightUp (.clk(clk),.rst(rst),.pulse(select),.button(rightUpButton), 
 						.yes(rightUpDetected));
-
 	downDebounce rightDown (.clk(clk),.rst(rst),.pulse(select),.button(rightDownButton), 
 							.yes(rightDownDetected));
 
@@ -246,7 +245,7 @@ module vga_top (clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,
 			// Ball goes left when hitting right paddle
 			else if(((ballLeftBorder) >= rightPaddleLeftSide) && 
 					 (ballLeftBorder <= rightPaddleRightSide) && 
-					 ((ballUpperBorder) >= topOfRightPaddle)  && 
+					 ((ballUpperBorder)>= topOfRightPaddle)   && 
 					 ((ballUpperBorder <= topOfRightPaddle + paddleHeight)))
 				begin
 					ballHVeloNext = ballSpeedLeft;
@@ -255,7 +254,7 @@ module vga_top (clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,
 			// Ball goes right when hitting left paddle
 			else if(((ballLeftBorder) <= paddleRightSide) && 
 					 (ballLeftBorder >= paddleLeftSide)	  && 
-					 ((ballUpperBorder) >= topOfPaddle)   && 
+					 ((ballUpperBorder)>= topOfPaddle)    && 
 					 ((ballUpperBorder <= topOfPaddle + paddleHeight)))
 				begin
 					ballHVeloNext = ballSpeedRight;
@@ -267,22 +266,18 @@ module vga_top (clk,rst,select,hsync,vsync,sw,rgb,upButton,downButton,
 		if ((x_pixel >= 2 && x_pixel <= rightWallRightBorder) && 
 			(y_pixel >= topWallUpperBorder && y_pixel <= topWallLowerBorder))  
 			rgb = rgbr;
-		
 		//bottom
 		else if ((x_pixel >= 2 && x_pixel <= rightWallRightBorder) && 
 				 (y_pixel >= bottomWallUpperBorder && y_pixel <= bottomWallLowerBorder)) 
 			rgb = rgbr;
-		
 		//left
 		else if ((x_pixel >= paddleLeftSide && x_pixel <= paddleRightSide) && 
 				 (y_pixel >= topOfPaddle) && (y_pixel <= topOfPaddle + paddleHeight))
 			rgb = rgbr;
-		
 		//right
 		else if ((x_pixel >= rightPaddleLeftSide && x_pixel <= rightPaddleRightSide) && 
 				 (y_pixel >= topOfRightPaddle) && (y_pixel <= topOfRightPaddle + paddleHeight))
 			rgb = rgbr;
-		
 		//ball
 		else if ((ballon) && (on))
 			rgb = rgbr;

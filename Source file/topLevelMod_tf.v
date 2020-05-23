@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: topLevelModule test fixture										//
+// 	File name: Top level module test fixture									//
 //    																			//
 //		Created by: Anh Nguyen on 10/17/19										//
 //		Copyright @2019 Anh Nguyen. All rights reserved.						//

@@ -1,14 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: topLevelModule													//
+// 	File name: toplevelMod.v													//
 //    																			//
 //		Created by: Anh Nguyen on 10/17/19										//
 //		Copyright @2019 Anh Nguyen. All rights reserved.						//
 //																				//
 //////////////////////////////////////////////////////////////////////////////////
-
-module topLevelMod(clk,rst,sw,hscan,vscan,vgaR, vgaG, vgaB,upButton, downButton, 
-				   rightUpButton,rightDownButton);
+module topLevelMod(clk,rst,sw,hscan,vscan,vgaR, vgaG, vgaB,upButton, downButton, rightUpButton,rightDownButton);
 	input 			clk,rst,upButton, downButton, rightUpButton, rightDownButton;
 	input [11:0] 	sw;
 	wire 				allclk,allrst;
@@ -23,9 +21,7 @@ module topLevelMod(clk,rst,sw,hscan,vscan,vgaR, vgaG, vgaB,upButton, downButton,
 	clkdiv divider 	(.clk(clk), .rst(allrst), .clk_25MGHz(allclk));
 
 	//vga_top
-	vga_top vga 		(.clk(clk), .rst(allrst), .select(allclk), .sw(sw[11:0]), 
-						 .hsync(hscan),.vsync(vscan), .rgb({vgaR[3:0],vgaG[3:0],vgaB[3:0]}),
-						 .upButton(upButton), .downButton(downButton),
-						 .rightUpButton(rightUpButton), .rightDownButton(rightDownButton));
+	vga_top vga 		(.clk(clk), .rst(allrst), .select(allclk), .sw(sw[11:0]), .hsync(hscan),
+							 .vsync(vscan), .rgb({vgaR[3:0],vgaG[3:0],vgaB[3:0]}), .upButton(upButton), .downButton(downButton),.rightUpButton(rightUpButton), .rightDownButton(rightDownButton));
 	
 endmodule

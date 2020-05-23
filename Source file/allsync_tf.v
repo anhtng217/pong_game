@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: vertical and horizontal sync test fixture						//
+// 	File name: allsync_tf														//
 //    																			//
-//		Created by: Anh Nguyen on 10/24/19										//
+//		Created by: Anh Nguyen on 10/17/19										//
 //		Copyright @2019 Anh Nguyen. All rights reserved.						//
 //																				//
 //////////////////////////////////////////////////////////////////////////////////

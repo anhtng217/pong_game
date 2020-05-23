@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: clock divider test fixture										//
+// 	File name: Pulse generator test fixture										//
 //    																			//
-//		Created by: Anh Nguyen on 10/24/19										//
+//		Created by: Anh Nguyen on 10/17/19										//
 //		Copyright @2019 Anh Nguyen. All rights reserved.						//
 //																				//
 //////////////////////////////////////////////////////////////////////////////////

@@ -1,13 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 	File name: up button debouncer												//
+// 	File name: down button debouncer											//
 //    																			//
-//		Created by: Anh Nguyen on 12/05/19										//
+//		Created by: Anh Nguyen on 10/17/19										//
 //		Copyright @2019 Anh Nguyen. All rights reserved.						//
 //																				//
 //////////////////////////////////////////////////////////////////////////////////
-
-module upDebounce(clk,rst,pulse,button,yes);
+module downDebounce(clk,rst,pulse,button,yes);
 	input clk,rst,pulse,button;
 	output reg yes;
 	reg [2:0] state, nState;
@@ -62,4 +61,3 @@ module upDebounce(clk,rst,pulse,button,yes);
 
 
 endmodule
-
