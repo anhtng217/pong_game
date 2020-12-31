@@ -30,4 +30,4 @@ By using some predefined values such as the position of the edges of the ball, t
 In addition, to finish the logic of the game, the ball is put in the middle of the screen as a player fails to hit the ball and let it touch the side walls. A signal defined as “rescan” keeps track of the debounce button signal and check if it’s active. If any buttons’ signal is active, it moves by 2 pixels/scan in the corresponding direction. 
 
 ## Click the image to see the demo video
-<img src="https://user-images.githubusercontent.com/29515828/103427092-44a63e80-4b73-11eb-9f25-98cb039143fc.png" width="90%"></img> 
+[![Multiplayer Pong Game Demo](https://i9.ytimg.com/vi_webp/zYy1nEMT7lc/mqdefault.webp?time=1609453800000&sqp=COihuf8F&rs=AOn4CLAE-INJmY_8RBbVHVYsjso1fFVgow)](https://youtu.be/zYy1nEMT7lc "Multiplaer Pong Game Demo")
