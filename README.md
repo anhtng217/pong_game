@@ -6,9 +6,14 @@ The game utilizes the soft processor on FPGA and is written in Verilog. The game
 
 The Nexys A7 board is based on the powerful Artix FPGA from Xilinx, and it brings unprecedented performance to various types of project. With its large, high-capacity FPGA, generous external memories, and a collection of USB, Ethernet, UARTs, SPIs, IICs and other communication protocols, the Nexys A7 can host designs ranging from introductory combinational circuits to powerful embedded processors.
 
+<img src="https://user-images.githubusercontent.com/29515828/103426709-428eb080-4b70-11eb-8ca5-0dc5433e9d14.jpg" width="90%"></img> 
+
 To play the game, the user must have a VGA cables and a monitor with VGA port built-in. The monitor will display the loading screen and the game interface. Players toggle the buttons to move the paddles up and down to hit the ball to the opponent side. As soon as the a player fail to hit the ball with the paddle, the game will reset to it initial state which the ball is set to be in the middle of the screen. If a player miss the ball 3 times, they lose the game. 
 
+<img src="https://user-images.githubusercontent.com/29515828/103426997-81be0100-4b72-11eb-97fd-53319054f243.gif" width="90%"></img> 
+
 Some of the animation of the ball and paddles and other features implemented in the software include user-input debouncing and edge detection, VGA controller, vertical and horizontal pixel scanning. A fixed pixel generator is implemented to create a ball, top and bottom border as well as two paddles so that two players can play the game at the same time.
+
 ## Design
 The VGA synchronization block includes the vga_sync block and the pixel generation block, one Asynchronous In Synchronous Out module to produce one reset signal for all other modules. A clock divider was also created to act as an enable for the h_sync and v_sync block. 
 
@@ -24,4 +29,5 @@ By using some predefined values such as the position of the edges of the ball, t
 
 In addition, to finish the logic of the game, the ball is put in the middle of the screen as a player fails to hit the ball and let it touch the side walls. A signal defined as “rescan” keeps track of the debounce button signal and check if it’s active. If any buttons’ signal is active, it moves by 2 pixels/scan in the corresponding direction. 
 
-
+## Click the image to see the demo video
+<img src="https://user-images.githubusercontent.com/29515828/103427092-44a63e80-4b73-11eb-9f25-98cb039143fc.png" width="90%"></img> 
